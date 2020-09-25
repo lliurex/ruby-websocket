@@ -1,0 +1,28 @@
+Source: ruby-websocket
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Manas kashyap <manaskashyaptech@gmail.com>
+Build-Depends: debhelper (>= 11~),
+               gem2deb,
+               rake,
+               ruby-rspec
+Standards-Version: 4.1.4
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-websocket.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-websocket
+Homepage: https://github.com/imanel/websocket-ruby
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+
+Package: ruby-websocket
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: ruby-websocket-parser (<= 1.0.0-1)
+Replaces: ruby-websocket-parser (<= 1.0.0-1)
+Description: Universal Ruby library to handle WebSocket protocol
+ This library focuses on providing abstraction layer over
+ WebSocket API instead of providing server or client
+ functionality.
